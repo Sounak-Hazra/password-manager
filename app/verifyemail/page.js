@@ -1,5 +1,6 @@
 "use client"
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
 const page = () => {
     const searchParams = useSearchParams()
@@ -20,9 +21,11 @@ const page = () => {
 
     return (
         <>
+            <Suspense>
             <div className='w-screen h-screen flex items-center justify-center'>
                 <button onClick={handleClick} className='w-fit h-fit px-5 py-2 bg-green-500 rounded-sm font-bold text-white'>VERIFY</button>
-            </div>
+                </div>
+                </Suspense>
         </>
     )
 }
