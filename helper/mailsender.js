@@ -32,10 +32,10 @@ export const sendMail = async ({ email, emailType, username }) => {
             from: 'hazrasounak87@gmail.com',
             to: email,
             subject: emailType === "VERIFY" ? "Verify your email" : "Change password",
-            html: `<p>Click <a href=${process.env.DOMAIN}/varifyemail/?token=${hashedtoken}>here</a> to ${emailType === "VERIFY" ? "Verify email" : "Reset your passwors"
+            html: `<p>Click <a href=${process.env.DOMAIN}/verifyemail/?token=${hashedtoken}>here</a> to ${emailType === "VERIFY" ? "Verify email" : "Reset your passwors"
                 } or copy and past the link bellow in the browser 
                 <br />
-                 ${process.env.DOMAIN}/varifyemail/?token=${hashedtoken}</p>`, // html body
+                 ${process.env.DOMAIN}/verifyemail/?token=${hashedtoken}</p>`, // html body
         });
         return info
     } catch (error) {

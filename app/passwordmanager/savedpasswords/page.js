@@ -13,11 +13,12 @@ const page = () => {
     const [props, setprops] = useState({})
     const [changePasswordpage, setchangePasswordpage] = useState(false)
     const [passwordUpdated, setpasswordUpdated] = useState(true)
-    const notify = (e) => toast.promise(handledelete(e), {
+    const notify = async (e) => 
+        toast.promise(handledelete(e), {
         pending: "Waiting for Deleting User",
         success: "User Deleted successfully",
         error: "Failed to Delete User"
-    });
+    })
     const getPasswords = async () => {
         const responce = await fetch("/api/passwordmanager/senddata", {
             method: "GET",

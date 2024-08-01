@@ -3,7 +3,6 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { usePathname, useSearchParams } from 'next/navigation'
-
 import { ToastContainer, toast, Zoom } from 'react-toastify';
 
 const Leftside = (props) => {
@@ -31,6 +30,14 @@ const Leftside = (props) => {
     const notify = () => toast.promise(handlelogout, {
         pending: "Logouting",
         success: "User Logout Successfully",
+        error: "Something Wrong"
+    })
+    const gosavedpasswords = () => toast.promise(handlelogout, {
+        pending: "Logouting",
+        error: "Something Wrong"
+    })
+    const gohome = () => toast.promise(handlelogout, {
+        pending: "Logouting",
         error: "Something Wrong"
     })
 

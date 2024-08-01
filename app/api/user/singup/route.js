@@ -28,6 +28,6 @@ export async function POST(request) {
         })
     } catch (error) {
         console.log(error)
-        return NextResponse.json({error:error.message,message:"error in singup",success:false},{status:500})
+        return NextResponse.json({error:"Network connection error",message:error.message,success:false},{status:500})
     }
 }
